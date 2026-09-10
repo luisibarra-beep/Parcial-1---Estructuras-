@@ -38,7 +38,7 @@ export class Clinica {
     const medico = this.medicos.medicoActual();
     const registro = {
       ...paciente,
-      medico: medico ? medico.nombre : 'Sin médico de guardia',
+      medico: medico ? medico.nombre : 'Sin medico de guardia',
       atencion: new Date().toLocaleTimeString('es-CO'),
     };
     this.historial.agregarAlFinal(registro);
@@ -53,14 +53,14 @@ export class Clinica {
 export const clinica = new Clinica();
 
 clinica.registrarMedico({ nombre: 'Dra. Valentina Torres', especialidad: 'Pediatría' });
-clinica.registrarMedico({ nombre: 'Dr. Andrés Ramírez', especialidad: 'Medicina general' });
-clinica.registrarMedico({ nombre: 'Dra. Camila López', especialidad: 'Urgencias' });
-clinica.registrarMedico({ nombre: 'Dr. Julián Castro', especialidad: 'Cirugía general' });
+clinica.registrarMedico({ nombre: 'Dr. Andres Ramirez', especialidad: 'Medicina general' });
+clinica.registrarMedico({ nombre: 'Dra. Camila Lopez', especialidad: 'Urgencias' });
+clinica.registrarMedico({ nombre: 'Dr. Julian Castro', especialidad: 'Cirugía general' });
 
-clinica.registrarMiembroComite({ nombre: 'María Fernanda Ruiz', cargo: 'Directora administrativa' });
-clinica.registrarMiembroComite({ nombre: 'Carlos Gómez', cargo: 'Jefe de enfermería' });
+clinica.registrarMiembroComite({ nombre: 'Maria Fernanda Ruiz', cargo: 'Directora administrativa' });
+clinica.registrarMiembroComite({ nombre: 'Carlos Gomez', cargo: 'Jefe de enfermería' });
 clinica.registrarMiembroComite({ nombre: 'Luisa Herrera', cargo: 'Coordinadora de calidad' });
-clinica.registrarMiembroComite({ nombre: 'Óscar Delgado', cargo: 'Director financiero' });
+clinica.registrarMiembroComite({ nombre: 'Oscar Delgado', cargo: 'Director financiero' });
 
 clinica.agregarPaciente('Juan Pérez', 'Fiebre y dolor de cabeza');
 clinica.agregarPaciente('Ana Morales', 'Control de presión arterial');
