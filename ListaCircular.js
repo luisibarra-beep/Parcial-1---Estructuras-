@@ -12,7 +12,6 @@ export class ListaCircular {
     this.tamanio = 0;
   }
 
-
   agregar(dato) {
     const nuevo = new NodoCircular(dato);
     if (!this.cola) {
