@@ -44,7 +44,7 @@ function Encabezado() {
   return (
     <header>
       <div>
-        <h1>🏥 Clínica San Rafael</h1>
+        <h1> Clínica San Rafael</h1>
         <p>Sistema de turnos, historial de atención y rotación de guardias</p>
       </div>
       <div className="badge-guardia">
@@ -77,7 +77,7 @@ function PanelEspera({ refrescar }) {
   return (
     <section className="panel ancho-completo">
       <h2>
-        ⏳ Pacientes en espera <span className="tag">Lista enlazada simple</span>
+         Pacientes en espera <span className="tag">Lista enlazada simple</span>
       </h2>
 
       <form className="formulario" onSubmit={agregar}>
@@ -100,7 +100,7 @@ function PanelEspera({ refrescar }) {
           onClick={atender}
           disabled={pacientes.length === 0}
         >
-          ✔ Atender siguiente
+           Atender siguiente
         </button>
       </form>
 
@@ -175,7 +175,7 @@ function PanelMedicos({ segundos, refrescar }) {
             </div>
           </Fragment>
         ))}
-        {medicos.length > 0 && <span className="retorno">↺ vuelve al primero</span>}
+        {medicos.length > 0 && <span className="retorno"> vuelve al primero</span>}
       </div>
 
       <form className="formulario" style={{ marginTop: 14, marginBottom: 0 }} onSubmit={agregar}>
@@ -218,7 +218,7 @@ function PanelComite({ refrescar }) {
   return (
     <section className="panel">
       <h2>
-        🏛️ Comité administrativo <span className="tag">Lista circular doble</span>
+         Comité administrativo <span className="tag">Lista circular doble</span>
       </h2>
 
       <div className="comite-nav">
@@ -289,7 +289,7 @@ function PanelHistorial() {
   return (
     <section className="panel ancho-completo">
       <h2>
-        📋 Historial de atención <span className="tag">Lista doblemente enlazada</span>
+        Historial de atención <span className="tag">Lista doblemente enlazada</span>
       </h2>
 
       <button className="btn btn-secundario" onClick={() => setRecientesPrimero((r) => !r)}>
@@ -309,7 +309,7 @@ function PanelHistorial() {
                 <strong>{r.nombre}</strong>
                 <span>{r.sintoma}</span>
                 <small>Atendió: {r.medico}</small>
-                <small>🕐 {r.atencion}</small>
+                <small> {r.atencion}</small>
               </div>
             </Fragment>
           ))}
