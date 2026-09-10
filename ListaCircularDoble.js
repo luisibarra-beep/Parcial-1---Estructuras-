@@ -37,7 +37,6 @@ export class ListaCircularDoble {
     return this.miembroActual();
   }
 
-  
   anterior() {
     if (this.actual) {
       this.actual = this.actual.anterior;
