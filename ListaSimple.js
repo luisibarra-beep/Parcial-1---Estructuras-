@@ -1,10 +1,3 @@
-// ============================================================
-// LISTA ENLAZADA SIMPLE
-// Uso: cola de pacientes en espera (el primero en llegar es
-// el primero en ser atendido → comportamiento FIFO).
-// Cada nodo solo conoce al siguiente: cabeza → n1 → n2 → null
-// ============================================================
-
 export class NodoSimple {
   constructor(dato) {
     this.dato = dato;
@@ -18,7 +11,6 @@ export class ListaSimple {
     this.tamanio = 0;
   }
 
-  // Inserta un paciente al final de la cola
   insertarAlFinal(dato) {
     const nuevo = new NodoSimple(dato);
     if (!this.cabeza) {
@@ -33,7 +25,6 @@ export class ListaSimple {
     this.tamanio++;
   }
 
-  // Elimina y retorna el paciente del frente (el que se atiende)
   eliminarAlFrente() {
     if (!this.cabeza) return null;
     const eliminado = this.cabeza;
@@ -46,7 +37,6 @@ export class ListaSimple {
     return this.cabeza === null;
   }
 
-  // Convierte la lista a un arreglo para que React la pinte
   toArray() {
     const arreglo = [];
     let actual = this.cabeza;
