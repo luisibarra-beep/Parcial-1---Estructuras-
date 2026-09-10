@@ -7,7 +7,6 @@ function App() {
   const [segundos, setSegundos] = useState(10);
   const refrescar = () => setVersion((v) => v + 1);
 
-  // Rotación automática del médico de guardia cada 10 segundos
   useEffect(() => {
     const rotacion = setInterval(() => {
       clinica.rotarMedico();
@@ -15,7 +14,6 @@ function App() {
       setVersion((v) => v + 1);
     }, 10000);
 
-    // Reloj de 1 segundo solo para mostrar la cuenta regresiva
     const reloj = setInterval(() => {
       setSegundos((s) => (s > 1 ? s - 1 : 10));
     }, 1000);
