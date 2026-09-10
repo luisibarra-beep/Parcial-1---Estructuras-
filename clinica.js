@@ -1,10 +1,3 @@
-// ============================================================
-// LÓGICA DE LA CLÍNICA
-// Clase que conecta las 4 estructuras de datos y define las
-// operaciones del sistema de turnos. Es el "intermediario"
-// entre las listas enlazadas y el panel de React.
-// ============================================================
-
 import { ListaSimple } from './estructuras/ListaSimple.js';
 import { ListaDoble } from './estructuras/ListaDoble.js';
 import { ListaCircular } from './estructuras/ListaCircular.js';
@@ -12,10 +5,10 @@ import { ListaCircularDoble } from './estructuras/ListaCircularDoble.js';
 
 export class Clinica {
   constructor() {
-    this.espera = new ListaSimple();            // pacientes en espera
-    this.historial = new ListaDoble();          // historial de atención
-    this.medicos = new ListaCircular();         // rotación de guardias
-    this.comite = new ListaCircularDoble();     // comité administrativo
+    this.espera = new ListaSimple();            
+    this.historial = new ListaDoble();         
+    this.medicos = new ListaCircular();        
+    this.comite = new ListaCircularDoble();    
     this.contadorPacientes = 0;
   }
 
@@ -27,7 +20,6 @@ export class Clinica {
     this.comite.agregar(miembro);
   }
 
-  // El paciente entra a la cola de espera (lista simple)
   agregarPaciente(nombre, sintoma) {
     const paciente = {
       id: ++this.contadorPacientes,
@@ -39,8 +31,6 @@ export class Clinica {
     return paciente;
   }
 
-  // Atender = eliminar de la lista simple + agregar al historial (lista doble),
-  // guardando qué médico estaba de guardia en ese momento
   atenderPaciente() {
     const paciente = this.espera.eliminarAlFrente();
     if (!paciente) return null;
@@ -55,18 +45,13 @@ export class Clinica {
     return registro;
   }
 
-  // La rotación automática cada 10 segundos llama este método
   rotarMedico() {
     return this.medicos.rotar();
   }
 }
 
-// Instancia única que comparte toda la aplicación
 export const clinica = new Clinica();
 
-// ------------------------------------------------------------
-// Datos de ejemplo para que el panel no arranque vacío
-// ------------------------------------------------------------
 clinica.registrarMedico({ nombre: 'Dra. Valentina Torres', especialidad: 'Pediatría' });
 clinica.registrarMedico({ nombre: 'Dr. Andrés Ramírez', especialidad: 'Medicina general' });
 clinica.registrarMedico({ nombre: 'Dra. Camila López', especialidad: 'Urgencias' });
