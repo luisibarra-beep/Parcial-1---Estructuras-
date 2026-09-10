@@ -1,11 +1,3 @@
-// ============================================================
-// LISTA CIRCULAR DOBLEMENTE ENLAZADA
-// Uso: comité administrativo. Cada nodo apunta al siguiente
-// y al anterior, y el último se conecta con el primero:
-// n1 ⇄ n2 ⇄ n3, y n3 ⇄ n1 (ciclo en ambas direcciones).
-// Permite navegar el comité con ◀ y ▶ sin llegar nunca a null.
-// ============================================================
-
 export class NodoCircularDoble {
   constructor(dato) {
     this.dato = dato;
@@ -16,12 +8,11 @@ export class NodoCircularDoble {
 
 export class ListaCircularDoble {
   constructor() {
-    this.inicio = null;  // punto de partida fijo para recorrer
-    this.actual = null;  // miembro seleccionado en el panel
+    this.inicio = null;  
+    this.actual = null;  
     this.tamanio = 0;
   }
 
-  // Agrega un miembro al final del círculo (antes del inicio)
   agregar(dato) {
     const nuevo = new NodoCircularDoble(dato);
     if (!this.inicio) {
@@ -39,7 +30,6 @@ export class ListaCircularDoble {
     this.tamanio++;
   }
 
-  // Navega al siguiente miembro (nunca sale del círculo)
   siguiente() {
     if (this.actual) {
       this.actual = this.actual.siguiente;
@@ -47,7 +37,7 @@ export class ListaCircularDoble {
     return this.miembroActual();
   }
 
-  // Navega al miembro anterior (nunca sale del círculo)
+  
   anterior() {
     if (this.actual) {
       this.actual = this.actual.anterior;
@@ -59,7 +49,6 @@ export class ListaCircularDoble {
     return this.actual ? this.actual.dato : null;
   }
 
-  // Recorre el círculo una sola vez, desde el inicio
   toArray() {
     const arreglo = [];
     if (!this.inicio) return arreglo;
